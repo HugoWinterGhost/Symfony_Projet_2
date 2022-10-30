@@ -1,0 +1,48 @@
+# translations/messages.fr.yaml
+
+Nom: Nom
+Name: Nom
+Prix: Prix
+Price: Prix
+Description: Description
+Stock: Stock
+Photo: Photo
+LabelImage: Photo (PNG, JPG)
+ErreurImage: Veuillez choisir une image valide
+ErrorImage: Veuillez choisir une image valide
+Produits: Produits
+Modifier: Modifier
+Details: Voir plus
+Supprimer: Supprimer
+Sauvegarder: Sauvegarder
+Prenom: Prénom
+FirstName: Prénom
+Email: Adresse mail
+Mail: Adresse mail
+Password: Mot de passe
+Pass: Mot de passe
+Register: S'inscrire
+Registry: S'inscrire
+
+produit:
+  empty: Il n'y a aucun produit
+  added: Produit ajouté
+  add: Ajouter un produit
+  edit: Modifier le produit
+  show: Voir le produit
+  delete: Supprimer le produit
+  unknown: Produit introuvable
+  updated: Produit mis à jour
+  deleted: Produit supprimé
+  add_cart: Ajouter au panier
+
+user:
+  registered: Inscription réussi
+  disconnect: Déconnexion réussie
+  login: Se connecter
+  logout: Se déconnecter
+  loginTitle: Veuillez vous connecter
+  registerTitle: Veuillez vous inscrire
+  accountTitle: Bonjour, et bienvenue sur notre site Kira Symfony
+  accountText: Nom => %name% / Prénom => %firstName%
+  accountLogout: Vous êtes connecté en tant que %username%

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <div class="card card-product">
+    {% if produit.photo is not null %}
+      <img src="{{'/uploads/' ~ produit.photo }}"  class="card-img-top" alt="picture produit">
+    {% else %}
+      <img src="https://fakeimg.pl/286x180/?text={{ produit.nom }}"  class="card-img-top" alt="picture produit">
+    {% endif %}
+    <div class="card-body text-center">
+      <h3 class="card-title">{{ produit.nom|capitalize }}</h3>
+      <p class="card-text">{{ 'Prix'|trans }} : {{ produit.prix }}€ / Stock : {{ produit.stock }}</p>
+      <a href="#" class="btn btn-primary">{{ 'produit.add_cart'|trans }}</a>
+    </div>
+  </div>
+{% endblock %}

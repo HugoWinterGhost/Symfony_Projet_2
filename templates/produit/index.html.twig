@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Kira Symfony {% endblock %}
+
+{% block body %}
+    {% if produits is not empty %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>{{ 'Nom'|trans }}</th>
+                    <th>{{ 'Description'|trans }}</th>
+                    <th>{{ 'Prix'|trans }}</th>
+                    <th>{{ 'Stock'|trans }}</th>
+                    <th>{{ 'Photo'|trans }}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in produits %}
+                    <tr>
+                        <td>{{ p.nom }}</td>
+                        <td>{{ p.description }}</td>
+                        <td>{{ p.prix }}€</td>
+                        <td>{{ p.stock }}</td>
+                        <td>
+                            {% if p.photo is not null %}
+                              <img src="{{'/uploads/' ~ p.photo }}"  class="card-img-top pic-product" alt="picture produit">
+                            {% else %}
+                              <img src="https://fakeimg.pl/286x180/?text={{ p.nom }}"  class="card-img-top pic-product" alt="picture produit">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <a href="{{ path('une_fiche_produit', { 'id': p.id }) }}" title="{{ 'produit.show'|trans }}" class="btn btn-info">{{ 'Details'|trans }}</a>
+                            <a href="{{ path('un_produit', { 'id': p.id }) }}" title="{{ 'produit.edit'|trans }}" class="btn btn-warning">{{ 'Modifier'|trans }}</a>
+                            <a href="{{ path('produit_delete', { 'id': p.id }) }}" title="{{ 'produit.delete'|trans }}" class="btn btn-danger">{{ 'Supprimer'|trans }}</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+      <p>{{ 'produit.empty'|trans }}</p>
+    {% endif %}
+
+    <h2>{{ 'produit.add'|trans }}</h2>
+    {{ form(ajout) }}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+  <div>
+    <h3 class="mb-3 mt-3 font-weight-normal">{{ 'user.accountTitle'|trans }}</h1>
+    <h5>{{ 'user.accountText'|trans({ '%name%': app.user.nom, '%firstName%': app.user.prenom }) }}</h2>
+    <p>{{ 'user.accountLogout'|trans({ '%username%': app.user.username }) }}</p>
+    <a class="btn btn-primary" href="{{ path('logout') }}">{{ 'user.logout'|trans }}</a>
+  </div>
+
+{% endblock %}
